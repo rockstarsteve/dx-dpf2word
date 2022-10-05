@@ -1,0 +1,17 @@
+
+.chooseTopPdfBox{
+    -fx-padding: 20 0 0 0;
+}
+
+.choosePdfBox{
+    -fx-padding: 5 0 0 0;
+}
+
+.pdfInput {
+    -fx-pref-width: 300;
+}
+
+.saveBox{
+    -fx-padding: 80 0 0 0;
+    -fx-alignment: center;
+}
