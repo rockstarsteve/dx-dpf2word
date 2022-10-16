@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.7.1</junit.version>
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
@@ -51,19 +51,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <!--pdf组件远程仓库-->
@@ -81,14 +68,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>io.github.fvarrui</groupId>
                 <artifactId>javapackager</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.2</version>
                 <executions>
                     <execution>
                         <id>dx-pdf2word-for-windows</id>
@@ -99,20 +86,22 @@
                         <configuration>
                             <platform>windows</platform>
                             <name>dxPdf2word</name>
+                            <displayName>dxPdf2word</displayName>
                             <mainClass>com.dx.controller.DxApplication</mainClass>
                             <version>1.0</version>
                             <bundleJre>true</bundleJre>
                             <!--这个可以配置jre或者jdk-->
-                            <jrePath>D:\ide\java\openjdk17</jrePath>
+                            <jrePath>D:\ide\java\java8\jre</jrePath>
                             <jreDirectoryName>jre</jreDirectoryName>
                             <copyDependencies>true</copyDependencies>
+                            <assetsDir>${project.basedir}/src/main/resources</assetsDir>
                             <outputDirectory>${project.build.directory}/exe</outputDirectory>
                             <winConfig>
-                                <icoFile>D:\project\dx-javafx\dx-javafx-spring\src\main\resources\images\dx.ico
-                                </icoFile>
+                                <icoFile>D:\project\dx-javafx\dx-javafx-spring\src\main\resources\images\dx.ico</icoFile>
                                 <generateSetup>false</generateSetup>
                                 <generateMsi>false</generateMsi>
                                 <disableDirPage>false</disableDirPage>
+                                <disableProgramGroupPage>false</disableProgramGroupPage>
                                 <wrapJar>false</wrapJar>
                             </winConfig>
                         </configuration>

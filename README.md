@@ -1,5 +1,7 @@
 # dx-dpf2word
-**环境：jdk17 + javafx**
+~~环境：jdk17 + javafx~~
+
+切换回：**环境：jdk1.8 + javafx**,主要是打包的时候出了点问题，没法解决，先用回1.8吧
 
 **pdf转word文档的工具**
 
@@ -18,4 +20,7 @@ ${project.build.sourceDirectory}：表示默认情况下src/main/java文件夹�
 
 
 
+## 用法
+
+**解压dxPdf2word.zip文件后，直接双击里面的exe文件就能直接运行**
 
